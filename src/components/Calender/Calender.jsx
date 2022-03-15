@@ -1,16 +1,29 @@
-import React from "react";
-import dateFns from "date-fns";
+import React, {Component} from 'react';
+import {DayPilot, DayPilotCalendar, DayPilotNavigator} from "@daypilot/daypilot-lite-react";
 
-class Calendar extends React.Component {
+class Calendar extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewType: "Week"
+    };
+  }
+
   render() {
+    const {...config} = this.state;
     return (
       <div>
-        <div>Header</div>
-        <div>Days</div>
-        <div>Cells</div>
+        <DayPilotCalendar
+          {...config}
+        />
       </div>
     );
   }
 }
+
+
+
+
 
 export default Calendar;

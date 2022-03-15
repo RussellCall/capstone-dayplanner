@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { WelcomeTitle } from './Users/Welcome';
 import { DayList } from './Day Components/DayItems';
 import { MyClock } from './Day Components/Time';
+import Calendar from './Calender/Calender';
 
 
 
@@ -11,7 +12,7 @@ export const ApplicationViews = () => {
     return (
         <>
             <Route>
-                <WelcomeTitle/> // Not displaying user name.
+                <WelcomeTitle/>
             </Route>
             
             <Route>
@@ -20,6 +21,10 @@ export const ApplicationViews = () => {
 
             <Route>
                 <DayList />
+            </Route>
+
+            <Route>
+                <Calendar />
             </Route>
         </>
     )
