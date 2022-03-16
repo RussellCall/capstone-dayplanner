@@ -1,29 +1,21 @@
 import React, {Component} from 'react';
-import {DayPilot, DayPilotCalendar, DayPilotNavigator} from "@daypilot/daypilot-lite-react";
+
+// DayPilot Lite
+import {DayPilotCalendar} from "@daypilot/daypilot-lite-react";
+
 
 class Calendar extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewType: "Week"
-    };
-  }
-
-  render() {
-    const {...config} = this.state;
-    return (
-      <div>
-        <DayPilotCalendar
-          {...config}
-        />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <DayPilotCalendar 
+              viewType="Week"
+              ref={component => {
+                this.calendar = component && component.control;
+              }}
+              />
+        );
+    }
 }
 
-
-
-
-
 export default Calendar;
+
