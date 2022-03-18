@@ -4,7 +4,9 @@ import { Route } from 'react-router-dom';
 import { WelcomeTitle } from './Users/Welcome';
 import { DayList } from './Day Components/DayItems';
 import { MyClock } from './Day Components/Time';
-import Calendar from './Calender/Calender';
+import { CurrentWeek } from './Calendar/Calendar';
+import { ToDoList } from './ToDo/ToDoList';
+//import { DayEvent } from './Calendar/DayNotes';
 
 
 
@@ -24,7 +26,13 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route>
-                <Calendar />
+                <CurrentWeek />
+            </Route>
+
+
+
+            <Route>
+                <ToDoList />
             </Route>
         </>
     )

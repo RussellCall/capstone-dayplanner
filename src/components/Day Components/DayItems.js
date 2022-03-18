@@ -19,4 +19,3 @@ export const DayList = () => {
     )
 }
  
-//export default DayList;
