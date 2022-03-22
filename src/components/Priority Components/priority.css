@@ -1,0 +1,15 @@
+.container{
+  position: relative;
+}
+
+ul{
+  height: 50px;       // fixed height
+  overflow: hidden;   // then set overflow to hidden in all respects
+  overflow-y: scroll; // At the end only from the top and bottom overflow to scrollable
+  background: 'red';
+  display: none;
+}
+
+.show{
+    display: block !important;
+}

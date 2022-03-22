@@ -6,6 +6,8 @@ import { DayList } from './Day Components/DayItems';
 import { MyClock } from './Day Components/Time';
 import { CurrentWeek } from './Calendar/Calendar';
 import { ToDoList } from './ToDo/ToDoList';
+import { PriDropDown } from './Priority Components/PriorityItems';
+
 //import { DayEvent } from './Calendar/DayNotes';
 
 
@@ -22,14 +24,16 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route>
+                <PriDropDown />
+            </Route>
+
+            <Route>
                 <DayList />
             </Route>
 
             <Route>
                 <CurrentWeek />
             </Route>
-
-
 
             <Route>
                 <ToDoList />

@@ -30,12 +30,21 @@ export const HighlightsForm = () => {
             })
     }
 
+    const DeleteTask = (id) => {
+        fetch(`http://localhost:8088/dayItems/${id}`, {
+            method: "DELETE"
+            //.get to refresh data
+        })
+        .then(() => {            
+            history.push("/dayItems")        
+        })    
+    }
+
     return (
         <form className="dayForm">
             
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="highlightNotes">Description:</label>
                     <input
                         onChange={
                             (event) => {
@@ -54,6 +63,12 @@ export const HighlightsForm = () => {
             <button className="btn btn-primary" onClick={saveNote}>
                 Save
             </button>
+            <button className='delete' onClick={() => {
+                    DeleteTask(dayItems.id)
+                }}>Delete
+            </button>
         </form>
+        
     )
 }
+

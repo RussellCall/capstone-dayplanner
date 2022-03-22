@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './calendar.css'
 import { HighlightsForm } from './DayNotes';
 
@@ -13,14 +14,11 @@ const Today = () => {
     const year = d.getFullYear();
     return (
         <>
-        <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-        <div title="Add to Calendar" className="addeventatc" data-styling="none">
-            Add to Calendar
-        </div>
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            
-        </div>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+                
+            </div>
+            <div><HighlightsForm /></div>
         </>
     )
 }
@@ -34,9 +32,11 @@ const TodayPlus1 = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-        </div>
+        <>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+            </div><div><HighlightsForm /></div>
+        </>
     )
 }
 
@@ -49,9 +49,11 @@ const TodayPlus2 = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-        </div>
+        <>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+            </div><div><HighlightsForm /></div>
+        </>
     )
 }
 
@@ -64,9 +66,11 @@ const TodayPlus3 = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-        </div>
+        <>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+            </div><div><HighlightsForm /></div>
+        </>
     )
 }
 
@@ -79,9 +83,11 @@ const TodayPlus4 = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-        </div>
+        <>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+            </div><div><HighlightsForm /></div>
+        </>
     )
 }
 
@@ -94,9 +100,11 @@ const TodayPlus5 = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-        </div>
+        <>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+            </div><div><HighlightsForm /></div>
+        </>
     )
 }
 
@@ -110,9 +118,11 @@ const TodayPlus6 = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-        </div>
+        <>
+            <div className="Date">
+                <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
+            </div><div><HighlightsForm /></div>
+        </>
     )
     
 }
@@ -128,7 +138,6 @@ return (
             <h3 className="week_day">{TodayPlus4()}</h3>
             <h3 className="week_day">{TodayPlus5()}</h3>
             <h3 className="week_day">{TodayPlus6()}</h3>
-            <h3 className="week_day">{HighlightsForm()}</h3>
     </>
 )
 

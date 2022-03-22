@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
+import './todo.css'
+
+
 //import { CatDropDown } from "./ToDoCatDrpDwn";
 
 
@@ -87,6 +90,7 @@ export const NewToDo = () => {
                                 updateTask(copy)
                             }
                         } />
+                        
                 </div>
                 <div>
                 <section className="todo_list">                
@@ -105,7 +109,8 @@ export const NewToDo = () => {
                         
                         <option value="0">Select Category</option>
                         {
-                            categories.map(c => <option key={`category--${c.id}`} value={c.id}>{c.description}</option>)
+                            categories.map(c => <option key={`category--${c.id}`} value={c.id}>{c.description}</option>) 
+                            
                         }
                     </select>
                 </div>

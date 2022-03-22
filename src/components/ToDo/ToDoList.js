@@ -15,7 +15,7 @@ const [toDoItems, updateTasks] = useState([])
 
     useEffect(
         () => {
-            fetch("http://localhost:8088/toDoItems")
+            fetch("http://localhost:8088/toDoItems?_expand=category&_expand=description")
                 .then(res => res.json())
                 .then((data) => {
                     updateTasks(data)
@@ -44,7 +44,7 @@ const [toDoItems, updateTasks] = useState([])
                     (toDoItem) => {
                         return <div key={`toDoItem--${toDoItem.id}`}>
                                 <label htmlFor="name">To Do List</label>                           
-                                <p>{toDoItem.task}</p>
+                                <p>{toDoItem.priority ? "❗" : ""} {toDoItem.task} {toDoItem.category.description} </p>
                                 <button className='delete' onClick={() => {
                                 DeleteTask(toDoItem.id)
                                 }}>Delete</button>                                
