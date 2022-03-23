@@ -7,6 +7,9 @@ import { MyClock } from './Day Components/Time';
 import { CurrentWeek } from './Calendar/Calendar';
 import { ToDoList } from './ToDo/ToDoList';
 import { PriDropDown } from './Priority Components/PriorityItems';
+import { PriorityForm } from './Priority Components/PriForm';
+import { BrowserRouter } from 'react-router-dom';
+
 
 //import { DayEvent } from './Calendar/DayNotes';
 
@@ -23,7 +26,7 @@ export const ApplicationViews = () => {
                 <MyClock/>
             </Route>
 
-            <Route>
+            <Route >
                 <PriDropDown />
             </Route>
 
@@ -37,6 +40,10 @@ export const ApplicationViews = () => {
 
             <Route>
                 <ToDoList />
+            </Route>
+
+            <Route path="/priorityItems/create">
+                <PriorityForm />
             </Route>
         </>
     )

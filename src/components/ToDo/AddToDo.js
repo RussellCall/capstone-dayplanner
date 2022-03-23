@@ -39,6 +39,8 @@ export const NewToDo = () => {
         return fetch("http://localhost:8088/toDoItems", fetchOption)
             .then(res => res.json()) 
             .then(() => {
+                window.location.reload(true)
+                window.localStorage.getItem(toDoItem)
                 history.push("/toDoItems")
             })
 

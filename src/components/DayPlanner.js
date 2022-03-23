@@ -5,6 +5,7 @@ import { NavBar } from "./nav/Navbar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 
+
 export const DayPlanner = () => (
     <>
     <Route

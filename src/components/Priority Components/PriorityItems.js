@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react"
-//import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 
@@ -18,14 +18,16 @@ export const PriDropDown = () => {
         },
         []
     )
-
    
         return <div className="drop-down">
                 <p>Top Priorities</p>
                 <select>
                 {
                     priorityItems.map((obj) => {
-                        return <option value={obj.id}>{obj.task}</option>
+                        return<>
+                        <option value={obj.id}>{obj.task}
+                        </option>
+                        </>
                     })
                 }
                 </select>

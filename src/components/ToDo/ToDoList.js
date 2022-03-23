@@ -3,15 +3,17 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 //import { Route } from 'react-router-dom';
 import { NewToDo } from './AddToDo';
+import './todo.css'
 
-
-
- 
 
 export const ToDoList = () => {
 
     const history = useHistory()
 const [toDoItems, updateTasks] = useState([])
+const [checked, setChecked] = useState({
+        complete: false
+});
+const toggleChecked = () => setChecked(value => !value)
 
     useEffect(
         () => {
@@ -30,11 +32,14 @@ const [toDoItems, updateTasks] = useState([])
             method: "DELETE"
             //.get to refresh data
         })
-        .then(() => {            
+        .then(() => {    
+            window.location.reload(true)
+            window.localStorage.getItem(toDoItems)     
             history.push("/toDoItems")        
         })    
     }
-
+   
+    
     
     return (
         <>
@@ -44,10 +49,16 @@ const [toDoItems, updateTasks] = useState([])
                     (toDoItem) => {
                         return <div key={`toDoItem--${toDoItem.id}`}>
                                 <label htmlFor="name">To Do List</label>                           
-                                <p>{toDoItem.priority ? "❗" : ""} {toDoItem.task} {toDoItem.category.description} </p>
+                                <p className= "todo" style={{textDecoration: toDoItem.complete ? 'line-through' : 'none', }} >{toDoItem.priority ? "❗" : ""} {toDoItem.task} {toDoItem.category.description} </p>
                                 <button className='delete' onClick={() => {
                                 DeleteTask(toDoItem.id)
-                                }}>Delete</button>                                
+                                }}>Delete</button>
+                                <label htmlFor="name">complete</label>
+                                <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={toggleChecked}
+                                />                              
                             </div>
                             
                     }
@@ -65,8 +76,3 @@ const [toDoItems, updateTasks] = useState([])
 
 }
 
-
-  
-
-                                
-                                

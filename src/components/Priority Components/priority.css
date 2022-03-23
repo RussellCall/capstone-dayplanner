@@ -3,9 +3,9 @@
 }
 
 ul{
-  height: 50px;       // fixed height
-  overflow: hidden;   // then set overflow to hidden in all respects
-  overflow-y: scroll; // At the end only from the top and bottom overflow to scrollable
+  height: 50px;      
+  overflow: hidden;  
+  overflow-y: scroll; 
   background: 'red';
   display: none;
 }
