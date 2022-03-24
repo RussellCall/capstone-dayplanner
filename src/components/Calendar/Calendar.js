@@ -1,7 +1,16 @@
 import React from 'react';
-
+import { DaySixList, DaySevenList, DayOneList, DayTwoList, DayThreeList, DayFourList, DayFiveList } from '../ApiManager';
 import './calendar.css'
-import { HighlightsForm } from './DayNotes';
+import { HighlightsForm1, HighlightsForm2, HighlightsForm3, HighlightsForm4, HighlightsForm5, HighlightsForm6, HighlightsForm7 } from './DayNotes';
+import { MyClock } from '../Day Components/Time';
+import { PriDropDown } from '../Priority Components/PriorityItems';
+import { WelcomeTitle } from '../Users/Welcome';
+import { DayList } from '../Day Components/DayDisplay';
+import { ToDoList } from '../ToDo/ToDoList';
+import { PriorityForm } from '../Priority Components/PriForm';
+import { Route } from 'react-router-dom';
+
+
 
 export const CurrentWeek = () => {
 const Today = () => {
@@ -18,7 +27,8 @@ const Today = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
                 
             </div>
-            <div><HighlightsForm /></div>
+            <div><DayOneList /></div> 
+            <div><HighlightsForm1 /></div>
         </>
     )
 }
@@ -35,10 +45,15 @@ const TodayPlus1 = () => {
         <>
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            </div><div><HighlightsForm /></div>
+            </div>
+            <div><DayTwoList /></div>
+            <div><HighlightsForm2 /></div>
         </>
     )
 }
+
+
+
 
 const TodayPlus2 = () => {
     const d = new Date();
@@ -52,7 +67,9 @@ const TodayPlus2 = () => {
         <>
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            </div><div><HighlightsForm /></div>
+            </div>
+            <div><DayThreeList /></div>
+            <div><HighlightsForm3 /></div>
         </>
     )
 }
@@ -69,7 +86,9 @@ const TodayPlus3 = () => {
         <>
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            </div><div><HighlightsForm /></div>
+            </div>
+            <div><DayFourList /></div>
+            <div><HighlightsForm4 /></div>
         </>
     )
 }
@@ -86,7 +105,9 @@ const TodayPlus4 = () => {
         <>
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            </div><div><HighlightsForm /></div>
+            </div>
+            <div><DayFiveList/></div>
+            <div><HighlightsForm5/></div>
         </>
     )
 }
@@ -103,7 +124,9 @@ const TodayPlus5 = () => {
         <>
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            </div><div><HighlightsForm /></div>
+            </div>
+            <div><DaySixList /></div>
+            <div><HighlightsForm6 /></div>
         </>
     )
 }
@@ -121,7 +144,9 @@ const TodayPlus6 = () => {
         <>
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
-            </div><div><HighlightsForm /></div>
+            </div>
+            <div><DaySevenList/></div>
+            <div><HighlightsForm7/></div>
         </>
     )
     
@@ -129,7 +154,10 @@ const TodayPlus6 = () => {
 
 return (
     <>
-        
+        <div><WelcomeTitle /></div>
+        <div><DayList /></div>
+        <div><MyClock /></div>
+        <div><PriDropDown /></div>
         <h1>Current Week</h1>
             <h3 className="week_day">{Today()}</h3>
             <h3 className="week_day">{TodayPlus1()}</h3>
@@ -138,6 +166,10 @@ return (
             <h3 className="week_day">{TodayPlus4()}</h3>
             <h3 className="week_day">{TodayPlus5()}</h3>
             <h3 className="week_day">{TodayPlus6()}</h3>
+        <div><ToDoList /></div>
+        <Route exact path="/priorityItems/create">
+                <PriorityForm />
+        </Route>
     </>
 )
 

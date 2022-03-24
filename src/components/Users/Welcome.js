@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import './welcome.css'
 
 export const WelcomeTitle = () => {
     const [user, set] = useState({})  // State variable for current user object
@@ -20,7 +20,7 @@ export const WelcomeTitle = () => {
     return (
         <>
             <section className="user">
-            <h2>Welcome, {user.name}!</h2>            
+            <h2 className="welcome">Welcome, {user.name}!</h2>            
             </section>
         </>
     )

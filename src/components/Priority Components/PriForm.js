@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import './priority.css'
 
 
 const PriList = () => {
@@ -39,14 +40,12 @@ const deletePri = (id) => {
             {
                 priorityItems.map(
                     (pri) => {
-                        return <div key={`priorityItems--${pri.id}`}>
-                                
-                                <p className={`priorityItem`}>{pri.task}</p>
-                                <button onClick={() => {
-                                    deletePri(pri.id)
-                                    }}>Delete</button>
-                                
-                            </div>
+                        return  <div key={`priorityItems--${pri.id}`}>
+                                {pri.userId === parseInt(localStorage.getItem("planner_user")) ?                                 
+                                <><p className={`priorityItem`}>{pri.task}</p><button onClick={() => {
+                                    deletePri(pri.id);
+                                } }>Delete</button></>  : ""}                                
+                                </div>
                             
                     }
                 )
@@ -81,7 +80,10 @@ export const PriorityForm = () => {
         return fetch("http://localhost:8088/priorityItems", fetchOption)
             .then(res => res.json()) 
             .then(() => {
-                history.push("/priorityItems")
+                window.location.reload(true)
+            })
+            .then(() => {
+                history.push("/priorityItems")        
             })
     }
 
@@ -100,6 +102,13 @@ export const PriorityForm = () => {
                                 const copy = {...priorityItems}
                                 copy.task = event.target.value
                                 updatePriority(copy)
+                                .then(() => {
+                                    return fetch("http://localhost:8088/priorityItems")
+                                })
+                                .then(res => res.json())
+                                .then((copy) => {
+                                updatePriority(copy)
+                                })
                             }
                         }
                         required autoFocus
@@ -110,7 +119,7 @@ export const PriorityForm = () => {
                 </div>
             </fieldset>
             <button className="btn btn-primary" onClick={savePriority}>
-                Save
+            <Link className="navbar__link" to="/">Save</Link>
             </button>
         </form>
     )

@@ -1,4 +1,5 @@
 import React from 'react';
+import './dayTime.css'
 //import './index.css';
 //import React, { useEffect, useState } from "react";
 //import { Link } from "react-router-dom"
@@ -12,9 +13,9 @@ export const DayList = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="Date">
-            <h1 className="Date__day">{day}</h1>
-            <h5 className="Date__full-date">{`${month} ${date}, ${year}`}</h5>
+        <div className="date" style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+            <h1 className="date-day">{day}</h1>
+            <h5 className="date-full-date">{`${month} ${date}, ${year}`}</h5>
         </div>
     )
 }

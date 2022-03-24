@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react"
-import { useHistory } from "react-router-dom";
+import './priority.css'
 
 
 
@@ -20,13 +20,14 @@ export const PriDropDown = () => {
     )
    
         return <div className="drop-down">
-                <p>Top Priorities</p>
+                <p className="priorityTitle">Top Priorities</p>
+                
                 <select>
                 {
                     priorityItems.map((obj) => {
                         return<>
-                        <option value={obj.id}>{obj.task}
-                        </option>
+                        {obj.userId === parseInt(localStorage.getItem("planner_user")) ? <option className="dd-display" key={obj.id}>{obj.task}
+                        </option> : ""}
                         </>
                     })
                 }

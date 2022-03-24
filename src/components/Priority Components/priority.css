@@ -1,15 +1,17 @@
-.container{
-  position: relative;
+.drop-down {
+  color: rgb(255, 255, 255);
+	font-weight: bold;
+  width: 250px;
+  margin: 20px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 100px;
+  animation: blinkingBackground 2s infinite
 }
-
-ul{
-  height: 50px;      
-  overflow: hidden;  
-  overflow-y: scroll; 
-  background: 'red';
-  display: none;
-}
-
-.show{
-    display: block !important;
+@keyframes blinkingBackground {
+  0%		{ background-color: #10c018;}
+  25%		{ background-color: #1056c0;}
+  50%		{ background-color: #ef0a1a;}
+  75%		{ background-color: #254878;}
+  100%	{ background-color: #04a1d5;}
 }
