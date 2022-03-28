@@ -1,25 +1,33 @@
-.clock {
-    
-    width: 250px;
-    margin: 20px;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .center {
-    border: 2px solid black;
-    border-radius: 100px;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  h1 {
-    align-items: center;
-  }
-  h5 {
-    align-items: center;
-  }
+.clock {  
+  width: 250px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center {
+  border-radius: 100px;
+  font-style: italic;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.date {
+  text-align: center;
+}
+h5 {
+  align-items: center;
+}
+
+.date-day {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.date-full-date {  
+  font-size: 40px;
+  margin: 10px;
+}

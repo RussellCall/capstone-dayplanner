@@ -28,7 +28,7 @@ const Today = () => {
                 
             </div>
             <div><DayOneList /></div> 
-            <div><HighlightsForm1 /></div>
+            <div className='notes'><HighlightsForm1 /></div>
         </>
     )
 }
@@ -47,7 +47,7 @@ const TodayPlus1 = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
             <div><DayTwoList /></div>
-            <div><HighlightsForm2 /></div>
+            <div className='notes'><HighlightsForm2 /></div>
         </>
     )
 }
@@ -69,7 +69,7 @@ const TodayPlus2 = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
             <div><DayThreeList /></div>
-            <div><HighlightsForm3 /></div>
+            <div className='notes'><HighlightsForm3 /></div>
         </>
     )
 }
@@ -88,7 +88,7 @@ const TodayPlus3 = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
             <div><DayFourList /></div>
-            <div><HighlightsForm4 /></div>
+            <div className='notes'><HighlightsForm4 /></div>
         </>
     )
 }
@@ -107,7 +107,7 @@ const TodayPlus4 = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
             <div><DayFiveList/></div>
-            <div><HighlightsForm5/></div>
+            <div className='notes'><HighlightsForm5/></div>
         </>
     )
 }
@@ -126,7 +126,7 @@ const TodayPlus5 = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
             <div><DaySixList /></div>
-            <div><HighlightsForm6 /></div>
+            <div className='notes'><HighlightsForm6 /></div>
         </>
     )
 }
@@ -146,7 +146,7 @@ const TodayPlus6 = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
             <div><DaySevenList/></div>
-            <div><HighlightsForm7/></div>
+            <div className='notes'><HighlightsForm7/></div>
         </>
     )
     
@@ -157,19 +157,28 @@ return (
         <div><WelcomeTitle /></div>
         <div><DayList /></div>
         <div><MyClock /></div>
-        <div><PriDropDown /></div>
-        <h1>Current Week</h1>
-            <h3 className="week_day">{Today()}</h3>
-            <h3 className="week_day">{TodayPlus1()}</h3>
-            <h3 className="week_day">{TodayPlus2()}</h3>
-            <h3 className="week_day">{TodayPlus3()}</h3>
-            <h3 className="week_day">{TodayPlus4()}</h3>
-            <h3 className="week_day">{TodayPlus5()}</h3>
-            <h3 className="week_day">{TodayPlus6()}</h3>
-        <div><ToDoList /></div>
-        <Route exact path="/priorityItems/create">
+        <div className='dropdown'><PriDropDown /></div>
+        <div className='flex_container'>
+            <div className='weekflex'>
+                <h1 className='week_label'>Current Week</h1>
+                <h3 className="week_day">{Today()}</h3>
+                <h3 className="week_day">{TodayPlus1()}</h3>
+                <h3 className="week_day">{TodayPlus2()}</h3>
+                <h3 className="week_day">{TodayPlus3()}</h3>
+                <h3 className="week_day">{TodayPlus4()}</h3>
+                <h3 className="week_day">{TodayPlus5()}</h3>
+                <h3 className="week_day">{TodayPlus6()}</h3>
+            </div>
+            <div draggable="true" className= 'todoflex'>
+                <h3 className='todoCard'><ToDoList /></h3>
+            </div>
+        </div>
+        <div>
+        <Route path="/priorityItems/create">
                 <PriorityForm />
         </Route>
+        </div>
+
     </>
 )
 

@@ -13,7 +13,7 @@ export const DayList = () => {
     const month = months[d.getMonth()];
     const year = d.getFullYear();
     return (
-        <div className="date" style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+        <div className="date">
             <h1 className="date-day">{day}</h1>
             <h5 className="date-full-date">{`${month} ${date}, ${year}`}</h5>
         </div>

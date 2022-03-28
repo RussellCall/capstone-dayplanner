@@ -1,25 +1,23 @@
 .priority {
     background-color: lightcoral;
 }
-body {
-    margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+
   
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
   
-  .todo {
+  p.todo {
+    display: flex;
+    align-items:flex-start;
     cursor: pointer;
+    float: right;
   }
-  .strike {
+
+  p.todo:hover {
     text-decoration: line-through;
+    color: red;
   }
 
   input[id=cb] {
@@ -32,7 +30,6 @@ body {
   }
   
   label {
-    border: thin solid darkgray;
     border-radius: 5px;
     padding: 10px;
     display: inline-block;
@@ -41,4 +38,124 @@ body {
 
   .crossed-line {
     text-decoration: line-through;
+}
+
+.comp {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#c099cc;
+  text-align:center;
+  transition: all 0.2s;
+  }
+  .comp:hover {
+  color:#000000;
+  background-color:#7ad7fb;
+  }
+  @media all and (max-width:30em){
+  .button {
+  display:block;
+  margin:0.4em auto;
+  }}
+
+  .complete {
+      font-size: .8rem;
+      opacity: 0.5;
+  }
+
+  .todo__category {
+    font-size: .8rem;
+    padding: 10px;
+  }
+
+  .delete {
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgb(255 255 255 / 70%) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 4px 0.8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+
+  .priLabel {
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgb(255 255 255 / 70%) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #000000;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 4px 0.8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+
+  
+ .button-sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-sub:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+#tdlist {
+  position: absolute;
+  z-index: 9;
+}
+
+#tdheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
 }

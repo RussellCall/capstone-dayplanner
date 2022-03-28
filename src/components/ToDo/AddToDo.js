@@ -62,10 +62,10 @@ export const NewToDo = () => {
     
     return (
         <form className="toDoForm">
-            <h2 className="toDoForm__title">New Task</h2>
+            <h2 className="toDoForm__title"></h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Task:</label>
+                    <label htmlFor="description">New Task:</label>
                     <input 
                         onChange={
                             (event) => {
@@ -83,7 +83,7 @@ export const NewToDo = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Priority:</label>
+                    <label className= "priLabel" htmlFor="name">Priority:</label>
                     <input type="checkbox"
                         onChange={
                             (event) => {
@@ -104,12 +104,10 @@ export const NewToDo = () => {
                             (event) => {
                                 const copy = {...toDoItem}
                                 copy.categoryId = parseInt(event.target.value)
-                                debugger
                                 updateTask(copy)
                             }
                         }>
                         
-                        <option value="0">Select Category</option>
                         {
                             categories.map(c => <option key={`category--${c.id}`} value={c.id}>{c.description}</option>) 
                             
@@ -119,7 +117,7 @@ export const NewToDo = () => {
             </section>
                 </div>
             </fieldset>
-            <button className="btn btn-primary" onClick={SaveToDo}>
+            <button className="button-sub" onClick={SaveToDo}>
                 Submit
             </button>
         </form>
