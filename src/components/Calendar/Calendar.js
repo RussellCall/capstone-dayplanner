@@ -9,6 +9,8 @@ import { DayList } from '../Day Components/DayDisplay';
 import { ToDoList } from '../ToDo/ToDoList';
 import { PriorityForm } from '../Priority Components/PriForm';
 import { Route } from 'react-router-dom';
+import { NewToDo } from '../ToDo/AddToDo';
+import Draggable from 'react-draggable';
 
 
 
@@ -169,13 +171,20 @@ return (
                 <h3 className="week_day">{TodayPlus5()}</h3>
                 <h3 className="week_day">{TodayPlus6()}</h3>
             </div>
+            <Draggable>
             <div draggable="true" className= 'todoflex'>
                 <h3 className='todoCard'><ToDoList /></h3>
             </div>
+            </Draggable>
         </div>
         <div>
         <Route path="/priorityItems/create">
                 <PriorityForm />
+        </Route>
+        </div>
+        <div>
+        <Route path="/toDoItems/create">
+                <NewToDo />
         </Route>
         </div>
 
@@ -183,4 +192,3 @@ return (
 )
 
 }
-

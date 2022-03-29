@@ -7,6 +7,7 @@ export const getAllUsers = () => {
     .then(res => res.json())
 }
 
+
 export const toggleChecked = (toDoItem) => {
     
     const fetchOption = {

@@ -43,7 +43,7 @@
 .todoCard {
     padding: 50px;
     width: 300px;
-    height: auto;
+    height: 300px;
     background-color: #1E2B32;
     border-radius: 10px 10px;
     resize: both;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
+import Popup from "../PopUp";
 import './todo.css'
 
 
@@ -15,10 +16,17 @@ export const NewToDo = () => {
         complete: false,
         categoryId: 1
     });
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
     
     const history = useHistory()
 
     const SaveToDo = (event) => {
+        
+
         event.preventDefault()
         const newToDo = {
             task: toDoItem.task,
@@ -60,7 +68,16 @@ export const NewToDo = () => {
 
 
     
-    return (
+    return (  <div>
+        <input
+        type="button"
+        value="Manage To-Do List"
+        onClick={togglePopup}
+        />
+        {isOpen && <Popup
+content={<>
+<div> 
+        
         <form className="toDoForm">
             <h2 className="toDoForm__title"></h2>
             <fieldset>
@@ -121,6 +138,11 @@ export const NewToDo = () => {
                 Submit
             </button>
         </form>
+        </div>
+</>}
+handleClose={togglePopup}
+/>}
+    </div>
     )
 }
 

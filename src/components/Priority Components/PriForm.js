@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Popup from "../PopUp";
 import './priority.css'
+
 
 
 const PriList = () => {
@@ -59,6 +61,11 @@ export const PriorityForm = () => {
     const [priorityItems, updatePriority] = useState({
         task: "",
     });
+    const [isOpen, setIsOpen] = useState(false)
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+      }
     
     const history = useHistory()
 
@@ -87,9 +94,16 @@ export const PriorityForm = () => {
             })
     }
 
-    return (
-
-
+    return ( <div>
+        <input
+        type="button"
+        value="Manage Priorities"
+        onClick={togglePopup}
+        />
+        {isOpen && <Popup
+content={<>
+<div>           
+        
         <form className="priorityForm">            
             <h2 className="priorityForm__title">Add To Priority List</h2>
             <fieldset>
@@ -122,5 +136,10 @@ export const PriorityForm = () => {
             <Link className="navbar__link" to="/">Save</Link>
             </button>
         </form>
+        </div>
+</>}
+handleClose={togglePopup}
+/>}
+    </div>
     )
 }

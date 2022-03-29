@@ -3,15 +3,14 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { NewToDo } from './AddToDo';
 import { toggleChecked } from '../ApiManager';
+import Popup from '../PopUp';
 import './todo.css'
-import $ from 'jquery';
 
 
 export const ToDoList = () => {
     
     const history = useHistory()
 const [toDoItems, updateTasks] = useState([])
-
 
 
     useEffect(
@@ -43,13 +42,14 @@ const [toDoItems, updateTasks] = useState([])
     
     
     return (
-        <>
-            <div>
+        <>  
+            <div id="tdlist">
+            <h3 className= "todo-label">To-Do List</h3>
             {
                 toDoItems.map(
                     (toDoItem) => {
                         
-                        return  <div id="tdlist">
+                        return  <div >
                                     <div id="tdheader" key={`toDoItem--${toDoItem.id}`}>                                
                                     {toDoItem.userId === parseInt(localStorage.getItem("planner_user")) ?                       
                                     <><p className="todo" style={{ textDecoration: toDoItem.complete ? 'line-through' : 'none', }}>
@@ -76,14 +76,16 @@ const [toDoItems, updateTasks] = useState([])
                 )
             }
             </div>
+
+        </>
+    )
+
+}
+            /*
             <section>
                 <div>
                     <NewToDo />
                 </div>
 
             </section>
-        </>
-    )
-
-}
-
+            */

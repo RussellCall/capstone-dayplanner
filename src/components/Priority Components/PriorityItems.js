@@ -4,7 +4,6 @@ import './priority.css'
 
 
 
-
 export const PriDropDown = () => {
     const [priorityItems, updatePri] = useState([])
 
@@ -32,7 +31,7 @@ export const PriDropDown = () => {
                     })
                 }
                 </select>
-            </div>;
+                </div>;
     
 }
 
