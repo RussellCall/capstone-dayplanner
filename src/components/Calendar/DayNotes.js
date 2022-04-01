@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
+import Popup from "../PopUp";
 import './calendar.css'
 
 export const HighlightsForm1 = () => {
     const [dayItems1, updateNote] = useState({
         highlightNotes: "",
     });    
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -39,7 +46,18 @@ export const HighlightsForm1 = () => {
                 history.push("/dayItems1")
             })
     }
-    return <form className="dayForm">
+    return <div>
+            <input
+            className="day-notes-button"
+            type="button"
+            value="Notes"
+            onClick={togglePopup}
+            />
+            {isOpen && <Popup
+            content={<>
+        <div> 
+            
+            <form className="dayForm">
             <fieldset>
                 <div className="form-group">
                     <input
@@ -60,13 +78,24 @@ export const HighlightsForm1 = () => {
             <button className="btn btn-primary" onClick={saveNote}>
                 Save
             </button>            
-        </form>    
+        </form>  
+        </div>
+            </>}
+            handleClose={togglePopup}
+            />}
+        </div>  
 }
 
 export const HighlightsForm2 = () => {
     const [dayItems2, updateNote] = useState({
         highlightNotes: "",
-    });    
+    });
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -100,35 +129,57 @@ export const HighlightsForm2 = () => {
                 history.push("/dayItems2")
             })
     }
-    return <form className="dayForm">
-            <fieldset>
-                <div className="form-group">
-                    <input
-                        onChange={
-                            (event) => {
-                                const copy = {...dayItems2}
-                                copy.highlightNotes = event.target.value
-                                updateNote(copy)
+    return <div>
+                <input
+                className="day-notes-button"
+                type="button"
+                value="Notes"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+            <div> 
+                
+                <form className="dayForm">
+                <fieldset>
+                    <div className="form-group">
+                        <input
+                            onChange={
+                                (event) => {
+                                    const copy = {...dayItems2}
+                                    copy.highlightNotes = event.target.value
+                                    updateNote(copy)
+                                }
                             }
-                        }
-                        required autoFocus
-                        type="text" id="highlightNotes"
-                        className="form-control"
-                        placeholder="Brief Note"
-                        />
-                </div>
-            </fieldset>
-            <button className="btn btn-primary" onClick={saveNote}>
-                Save
-            </button>            
-        </form>      
+                            required autoFocus
+                            type="text" id="highlightNotes"
+                            className="form-control"
+                            placeholder="Brief Note"
+                            />
+                    </div>
+                </fieldset>
+                <button className="btn btn-primary" onClick={saveNote}>
+                    Save
+                </button>            
+            </form>  
+            </div>
+                </>}
+                handleClose={togglePopup}
+                />}
+            </div>      
     
 }
 
 export const HighlightsForm3 = () => {
     const [dayItems3, updateNote] = useState({
         highlightNotes: "",
-    });    
+    });
+    
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -162,35 +213,57 @@ export const HighlightsForm3 = () => {
                 history.push("/dayItems3")
             })
     }
-    return <form className="dayForm">
-            <fieldset>
-                <div className="form-group">
-                    <input
-                        onChange={
-                            (event) => {
-                                const copy = {...dayItems3}
-                                copy.highlightNotes = event.target.value
-                                updateNote(copy)
+    return  <div>
+                <input
+                className="day-notes-button"
+                type="button"
+                value="Notes"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+            <div> 
+                
+                <form className="dayForm">
+                <fieldset>
+                    <div className="form-group">
+                        <input
+                            onChange={
+                                (event) => {
+                                    const copy = {...dayItems3}
+                                    copy.highlightNotes = event.target.value
+                                    updateNote(copy)
+                                }
                             }
-                        }
-                        required autoFocus
-                        type="text" id="highlightNotes"
-                        className="form-control"
-                        placeholder="Brief Note"
-                        />
-                </div>
-            </fieldset>
-            <button className="btn btn-primary" onClick={saveNote}>
-                Save
-            </button>            
-        </form>      
-    
+                            required autoFocus
+                            type="text" id="highlightNotes"
+                            className="form-control"
+                            placeholder="Brief Note"
+                            />
+                    </div>
+                </fieldset>
+                <button className="btn btn-primary" onClick={saveNote}>
+                    Save
+                </button>            
+            </form>  
+            </div>
+                </>}
+                handleClose={togglePopup}
+                />}
+            </div>      
+                
 }
 
 export const HighlightsForm4 = () => {
     const [dayItems4, updateNote] = useState({
         highlightNotes: "",
-    });    
+    });
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -224,35 +297,57 @@ export const HighlightsForm4 = () => {
                 history.push("/dayItems4")
             })
     }
-    return <form className="dayForm">
-            <fieldset>
-                <div className="form-group">
-                    <input
-                        onChange={
-                            (event) => {
-                                const copy = {...dayItems4}
-                                copy.highlightNotes = event.target.value
-                                updateNote(copy)
+    return  <div>
+                <input
+                className="day-notes-button"
+                type="button"
+                value="Notes"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+            <div> 
+                
+                <form className="dayForm">
+                <fieldset>
+                    <div className="form-group">
+                        <input
+                            onChange={
+                                (event) => {
+                                    const copy = {...dayItems4}
+                                    copy.highlightNotes = event.target.value
+                                    updateNote(copy)
+                                }
                             }
-                        }
-                        required autoFocus
-                        type="text" id="highlightNotes"
-                        className="form-control"
-                        placeholder="Brief Note"
-                        />
-                </div>
-            </fieldset>
-            <button className="btn btn-primary" onClick={saveNote}>
-                Save
-            </button>            
-        </form>      
+                            required autoFocus
+                            type="text" id="highlightNotes"
+                            className="form-control"
+                            placeholder="Brief Note"
+                            />
+                    </div>
+                </fieldset>
+                <button className="btn btn-primary" onClick={saveNote}>
+                    Save
+                </button>            
+            </form>  
+            </div>
+                </>}
+                handleClose={togglePopup}
+                />}
+            </div>      
     
 }
 
 export const HighlightsForm5 = () => {
     const [dayItems5, updateNote] = useState({
         highlightNotes: "",
-    });    
+    });
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -286,35 +381,57 @@ export const HighlightsForm5 = () => {
                 history.push("/dayItems5")
             })
     }
-    return <form className="dayForm">
-            <fieldset>
-                <div className="form-group">
-                    <input
-                        onChange={
-                            (event) => {
-                                const copy = {...dayItems5}
-                                copy.highlightNotes = event.target.value
-                                updateNote(copy)
+    return  <div>
+                <input
+                className="day-notes-button"
+                type="button"
+                value="Notes"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+            <div> 
+                
+                <form className="dayForm">
+                <fieldset>
+                    <div className="form-group">
+                        <input
+                            onChange={
+                                (event) => {
+                                    const copy = {...dayItems5}
+                                    copy.highlightNotes = event.target.value
+                                    updateNote(copy)
+                                }
                             }
-                        }
-                        required autoFocus
-                        type="text" id="highlightNotes"
-                        className="form-control"
-                        placeholder="Brief Note"
-                        />
-                </div>
-            </fieldset>
-            <button className="btn btn-primary" onClick={saveNote}>
-                Save
-            </button>            
-        </form>      
+                            required autoFocus
+                            type="text" id="highlightNotes"
+                            className="form-control"
+                            placeholder="Brief Note"
+                            />
+                    </div>
+                </fieldset>
+                <button className="btn btn-primary" onClick={saveNote}>
+                    Save
+                </button>            
+            </form>  
+            </div>
+                </>}
+                handleClose={togglePopup}
+                />}
+            </div>     
     
 }
 
 export const HighlightsForm6 = () => {
     const [dayItems6, updateNote] = useState({
         highlightNotes: "",
-    });    
+    });
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -348,35 +465,57 @@ export const HighlightsForm6 = () => {
                 history.push("/dayItems6")
             })
     }
-    return <form className="dayForm">
-            <fieldset>
-                <div className="form-group">
-                    <input
-                        onChange={
-                            (event) => {
-                                const copy = {...dayItems6}
-                                copy.highlightNotes = event.target.value
-                                updateNote(copy)
+    return  <div>
+                <input
+                className="day-notes-button"
+                type="button"
+                value="Notes"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+            <div> 
+                
+                <form className="dayForm">
+                <fieldset>
+                    <div className="form-group">
+                        <input
+                            onChange={
+                                (event) => {
+                                    const copy = {...dayItems6}
+                                    copy.highlightNotes = event.target.value
+                                    updateNote(copy)
+                                }
                             }
-                        }
-                        required autoFocus
-                        type="text" id="highlightNotes"
-                        className="form-control"
-                        placeholder="Brief Note"
-                        />
-                </div>
-            </fieldset>
-            <button className="btn btn-primary" onClick={saveNote}>
-                Save
-            </button>            
-        </form>      
+                            required autoFocus
+                            type="text" id="highlightNotes"
+                            className="form-control"
+                            placeholder="Brief Note"
+                            />
+                    </div>
+                </fieldset>
+                <button className="btn btn-primary" onClick={saveNote}>
+                    Save
+                </button>            
+            </form>  
+            </div>
+                </>}
+                handleClose={togglePopup}
+                />}
+            </div>      
     
 }
 
 export const HighlightsForm7 = () => {
     const [dayItems7, updateNote] = useState({
         highlightNotes: "",
-    });    
+    });
+
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+        }
+
     const history = useHistory()
     useEffect(
         () => {
@@ -410,27 +549,43 @@ export const HighlightsForm7 = () => {
                 history.push("/dayItems7")
             })
     }
-    return <form className="dayForm">
-            <fieldset>
-                <div className="form-group">
-                    <input
-                        onChange={
-                            (event) => {
-                                const copy = {...dayItems7}
-                                copy.highlightNotes = event.target.value
-                                updateNote(copy)
+    return  <div>
+                <input
+                className="day-notes-button"
+                type="button"
+                value="Notes"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+            <div> 
+                
+                <form className="dayForm">
+                <fieldset>
+                    <div className="form-group">
+                        <input
+                            onChange={
+                                (event) => {
+                                    const copy = {...dayItems7}
+                                    copy.highlightNotes = event.target.value
+                                    updateNote(copy)
+                                }
                             }
-                        }
-                        required autoFocus
-                        type="text" id="highlightNotes"
-                        className="form-control"
-                        placeholder="Brief Note"
-                        />
-                </div>
-            </fieldset>
-            <button className="btn btn-primary" onClick={saveNote}>
-                Save
-            </button>            
-        </form>      
+                            required autoFocus
+                            type="text" id="highlightNotes"
+                            className="form-control"
+                            placeholder="Brief Note"
+                            />
+                    </div>
+                </fieldset>
+                <button className="btn btn-primary" onClick={saveNote}>
+                    Save
+                </button>            
+            </form>  
+            </div>
+                </>}
+                handleClose={togglePopup}
+                />}
+            </div>      
     
 }

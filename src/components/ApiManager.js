@@ -8,7 +8,7 @@ export const getAllUsers = () => {
 }
 
 
-export const toggleChecked = (toDoItem) => {
+export const toggleComp = (toDoItem) => {
     
     const fetchOption = {
         method: "PATCH",
@@ -22,6 +22,19 @@ export const toggleChecked = (toDoItem) => {
 
 }
 
+export const togglePri = (toDoItem) => {
+    
+    const fetchOption = {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ priority: !toDoItem.priority })
+    }
+    
+    return fetch(`http://localhost:8088/toDoItems/${toDoItem.id}`, fetchOption)
+
+}
 
 export const DayOneList = () => {
     const [dayItemsOne, setDayOne] = useState([])

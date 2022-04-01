@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
+import { togglePri } from "../ApiManager";
 import Popup from "../PopUp";
 import './todo.css'
 
@@ -65,24 +66,22 @@ export const NewToDo = () => {
         },
         []  // Empty dependency array only reacts to JSX initial rendering
     )
-
-
     
     return (  <div>
-        <input
-        type="button"
-        value="Manage To-Do List"
-        onClick={togglePopup}
-        />
-        {isOpen && <Popup
-content={<>
-<div> 
-        
+                <input
+                className="todo-nav-button"
+                type="button"
+                value="Manage To-Do List"
+                onClick={togglePopup}
+                />
+                {isOpen && <Popup
+                content={<>
+                <div>         
         <form className="toDoForm">
             <h2 className="toDoForm__title"></h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">New Task:</label>
+                    <label htmlFor="task">New Task:</label>
                     <input 
                         onChange={
                             (event) => {
@@ -99,18 +98,6 @@ content={<>
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                    <label className= "priLabel" htmlFor="name">Priority:</label>
-                    <input type="checkbox"
-                        onChange={
-                            (event) => {
-                                const copy = {...toDoItem}
-                                copy.priority = event.target.checked
-                                updateTask(copy)
-                            }
-                        } />
-                        
-                </div>
                 <div>
                 <section className="todo_list">                
                 <div className="todo__category">Category
@@ -139,10 +126,10 @@ content={<>
             </button>
         </form>
         </div>
-</>}
-handleClose={togglePopup}
-/>}
-    </div>
+            </>}
+            handleClose={togglePopup}
+            />}
+                </div>
     )
 }
 

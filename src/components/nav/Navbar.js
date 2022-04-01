@@ -9,14 +9,14 @@ export const NavBar = (props) => {
         <ul className="navbar">
             
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/priorityItems/create"><PriorityForm/></Link>
+                <Link className="navbar__link_priority" to="/priorityItems/create"><PriorityForm/></Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/toDoItems/create"><NewToDo/></Link>
+                <Link className="navbar__link_todo" to="/toDoItems/create"><NewToDo/></Link>
             </li>
 
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="#"
+            <div><li className="navbar__item active">
+                <Link className="navbar__link_logout" to="#"
                 onClick={
                     () => {
                         localStorage.removeItem("planner_user")
@@ -24,7 +24,7 @@ export const NavBar = (props) => {
                 }>
                     Logout
                 </Link>
-            </li>
+            </li></div>
         </ul>
     )
 }

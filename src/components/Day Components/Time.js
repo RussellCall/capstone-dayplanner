@@ -1,5 +1,3 @@
-//import React, { Component } from "react";
-
 import React, { useEffect, useState } from "react"
 import './dayTime.css'
 
@@ -13,7 +11,7 @@ export const MyClock = () => {
         };
         });
 
-        return <div className="center" style={{flex:1,justifyContent: "center",alignItems: "center"}}> {
+        return <div className="clock" style={{flex:1,justifyContent: "center",alignItems: "center"}}> {
             time.toLocaleTimeString()
     } </div>;
 };

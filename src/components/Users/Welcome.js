@@ -18,11 +18,7 @@ export const WelcomeTitle = () => {
     )
 
     return (
-        <>
-            <section className="user">
-            <h2 className="welcome">Welcome, {user.name}!</h2>            
-            </section>
-        </>
+            <div className= "welcome"><span class="text">Welcome, {user.name}!</span></div>
     )
 }
 

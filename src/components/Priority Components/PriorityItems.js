@@ -18,7 +18,7 @@ export const PriDropDown = () => {
         []
     )
    
-        return <div className="drop-down">
+        return <div className="drop-down" key="priority-dropdown">
                 <p className="priorityTitle">Top Priorities</p>
                 
                 <select>

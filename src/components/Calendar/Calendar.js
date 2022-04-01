@@ -9,12 +9,12 @@ import { DayList } from '../Day Components/DayDisplay';
 import { ToDoList } from '../ToDo/ToDoList';
 import { PriorityForm } from '../Priority Components/PriForm';
 import { Route } from 'react-router-dom';
-import { NewToDo } from '../ToDo/AddToDo';
 import Draggable from 'react-draggable';
 
 
 
 export const CurrentWeek = () => {
+const nodeRef = React.useRef(null);
 const Today = () => {
     const d = new Date();
     const weekdays = ["Sun","Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun","Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
@@ -29,7 +29,7 @@ const Today = () => {
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
                 
             </div>
-            <div><DayOneList /></div> 
+            <div key="date"><DayOneList /></div> 
             <div className='notes'><HighlightsForm1 /></div>
         </>
     )
@@ -48,7 +48,7 @@ const TodayPlus1 = () => {
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
-            <div><DayTwoList /></div>
+            <div key="date"><DayTwoList /></div>
             <div className='notes'><HighlightsForm2 /></div>
         </>
     )
@@ -70,7 +70,7 @@ const TodayPlus2 = () => {
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
-            <div><DayThreeList /></div>
+            <div key="date"><DayThreeList /></div>
             <div className='notes'><HighlightsForm3 /></div>
         </>
     )
@@ -89,7 +89,7 @@ const TodayPlus3 = () => {
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
-            <div><DayFourList /></div>
+            <div key="date"><DayFourList /></div>
             <div className='notes'><HighlightsForm4 /></div>
         </>
     )
@@ -108,7 +108,7 @@ const TodayPlus4 = () => {
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
-            <div><DayFiveList/></div>
+            <div key="date"><DayFiveList/></div>
             <div className='notes'><HighlightsForm5/></div>
         </>
     )
@@ -127,7 +127,7 @@ const TodayPlus5 = () => {
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
-            <div><DaySixList /></div>
+            <div key="date"><DaySixList /></div>
             <div className='notes'><HighlightsForm6 /></div>
         </>
     )
@@ -147,33 +147,37 @@ const TodayPlus6 = () => {
             <div className="Date">
                 <h5 className="Date__full-date">{`${month} ${day}, ${date}`}</h5>
             </div>
-            <div><DaySevenList/></div>
+            <div key="date"><DaySevenList/></div>
             <div className='notes'><HighlightsForm7/></div>
         </>
     )
-    
+
 }
 
 return (
     <>
-        <div><WelcomeTitle /></div>
-        <div><DayList /></div>
-        <div><MyClock /></div>
-        <div className='dropdown'><PriDropDown /></div>
-        <div className='flex_container'>
-            <div className='weekflex'>
+        <div className="date-time-container">
+            <div><WelcomeTitle /></div>
+            <div><DayList /></div>
+            <div><MyClock /></div>
+        </div>
+        <div className='dropdown' key="priority-dropdown">{PriDropDown()}</div>
+        <div className='flex_container' key="container">
+            <Draggable nodeRef={nodeRef} key="draggable">
+            <div ref={nodeRef} draggable="true" className='weekflex'>
                 <h1 className='week_label'>Current Week</h1>
-                <h3 className="week_day">{Today()}</h3>
-                <h3 className="week_day">{TodayPlus1()}</h3>
-                <h3 className="week_day">{TodayPlus2()}</h3>
-                <h3 className="week_day">{TodayPlus3()}</h3>
-                <h3 className="week_day">{TodayPlus4()}</h3>
-                <h3 className="week_day">{TodayPlus5()}</h3>
-                <h3 className="week_day">{TodayPlus6()}</h3>
+                <div className="week_day">{Today()}</div>
+                <div className="week_day">{TodayPlus1()}</div>
+                <div className="week_day">{TodayPlus2()}</div>
+                <div className="week_day">{TodayPlus3()}</div>
+                <div className="week_day">{TodayPlus4()}</div>
+                <div className="week_day">{TodayPlus5()}</div>
+                <div className="week_day">{TodayPlus6()}</div>
             </div>
-            <Draggable>
-            <div draggable="true" className= 'todoflex'>
-                <h3 className='todoCard'><ToDoList /></h3>
+            </Draggable>
+            <Draggable nodeRef={nodeRef}>
+            <div ref={nodeRef} draggable="true" className= 'todoflex'>
+                <div className='todoCard'>{ToDoList()}</div>
             </div>
             </Draggable>
         </div>
@@ -182,12 +186,6 @@ return (
                 <PriorityForm />
         </Route>
         </div>
-        <div>
-        <Route path="/toDoItems/create">
-                <NewToDo />
-        </Route>
-        </div>
-
     </>
 )
 

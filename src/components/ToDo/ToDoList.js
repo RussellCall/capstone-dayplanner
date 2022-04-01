@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { NewToDo } from './AddToDo';
-import { toggleChecked } from '../ApiManager';
-import Popup from '../PopUp';
+import { toggleComp, togglePri } from '../ApiManager';
 import './todo.css'
+import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
+import "@reach/menu-button/styles.css"
 
 
 export const ToDoList = () => {
@@ -44,7 +44,7 @@ const [toDoItems, updateTasks] = useState([])
     return (
         <>  
             <div id="tdlist">
-            <h3 className= "todo-label">To-Do List</h3>
+                <div className= "todo-label">To-Do List</div>
             {
                 toDoItems.map(
                     (toDoItem) => {
@@ -52,21 +52,33 @@ const [toDoItems, updateTasks] = useState([])
                         return  <div >
                                     <div id="tdheader" key={`toDoItem--${toDoItem.id}`}>                                
                                     {toDoItem.userId === parseInt(localStorage.getItem("planner_user")) ?                       
-                                    <><p className="todo" style={{ textDecoration: toDoItem.complete ? 'line-through' : 'none', }}>
-                                        {toDoItem.priority ? "❗" : ""} {toDoItem.task} {toDoItem.category.description}
-                                    </p><button className='delete' onClick={() => DeleteTask(toDoItem.id)}>Delete</button><label className= "complete" htmlFor="name">complete</label>
-                                    <input
-                                    type="checkbox"
-                                    onChange={() => toggleChecked(toDoItem) 
-                                        .then(() => {
-                                            return fetch("http://localhost:8088/toDoItems?_expand=category&_expand=description")
-                                        })
-                                        .then(res => res.json())
-                                        .then((data) => {
-                                        updateTasks(data)
-                                        })                                   
-                                        }
-                                    /></> : ""}
+                                    <><div className="todo" style={{ textDecoration: toDoItem.complete ? 'line-through' : 'none', }}>
+                                        {toDoItem.priority ? "❗" : ""} {toDoItem.task + "--" + toDoItem.category.description}
+                                    </div>
+                                        <Menu>
+                                        <MenuButton className='actions'>Actions <span aria-hidden>▾</span></MenuButton>
+                                            <MenuList className='slide-down'>
+                                                <MenuItem className ='menu-highlight' onSelect={() => DeleteTask(toDoItem.id)}>delete</MenuItem>                                    
+                                                <MenuItem className ='menu-highlight' onSelect={() => toggleComp(toDoItem) 
+                                                    .then(() => {
+                                                        return fetch("http://localhost:8088/toDoItems?_expand=category&_expand=description")
+                                                    })
+                                                    .then(res => res.json())
+                                                    .then((data) => {
+                                                    updateTasks(data)
+                                                    })                                   
+                                                    }>complete</MenuItem>
+                                                <MenuItem className ='menu-highlight' onSelect={() => togglePri(toDoItem) 
+                                                    .then(() => {
+                                                        return fetch("http://localhost:8088/toDoItems?_expand=priority&_expand=category&_expand=description")
+                                                        })
+                                                    .then(res => res.json())
+                                                    .then((data) => {
+                                                    updateTasks(data)
+                                                    })}>priority</MenuItem>
+                                            </MenuList>
+                                        </Menu>
+                                    </> : ""}
                                     
                                     </div>
                                 </div>
@@ -81,11 +93,3 @@ const [toDoItems, updateTasks] = useState([])
     )
 
 }
-            /*
-            <section>
-                <div>
-                    <NewToDo />
-                </div>
-
-            </section>
-            */

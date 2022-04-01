@@ -96,6 +96,7 @@ export const PriorityForm = () => {
 
     return ( <div>
         <input
+        className= "pri-button"
         type="button"
         value="Manage Priorities"
         onClick={togglePopup}
