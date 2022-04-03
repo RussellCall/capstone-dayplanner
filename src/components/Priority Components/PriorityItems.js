@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react"
 import './priority.css'
+//import './priorityscss.scss'
 
 
 
@@ -18,7 +19,7 @@ export const PriDropDown = () => {
         []
     )
    
-        return <div className="drop-down" key="priority-dropdown">
+        return <div href="#" className="drop-down" key="priority-dropdown">
                 <p className="priorityTitle">Top Priorities</p>
                 
                 <select>

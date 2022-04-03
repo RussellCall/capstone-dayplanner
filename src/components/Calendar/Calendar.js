@@ -13,6 +13,7 @@ import Draggable from 'react-draggable';
 
 
 
+
 export const CurrentWeek = () => {
 const nodeRef = React.useRef(null);
 const Today = () => {
@@ -22,7 +23,6 @@ const Today = () => {
     const day = weekdays[d.getDay()];
     const date = d.getDate();
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -42,7 +42,6 @@ const TodayPlus1 = () => {
     const day = weekdays[d.getDay() + 1];
     const date = (d.getDate() + 1);
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -64,7 +63,6 @@ const TodayPlus2 = () => {
     const day = weekdays[d.getDay() + 2];
     const date = (d.getDate() + 2);
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -83,7 +81,6 @@ const TodayPlus3 = () => {
     const day = weekdays[d.getDay() + 3];
     const date = (d.getDate() + 3);
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -102,7 +99,6 @@ const TodayPlus4 = () => {
     const day = weekdays[d.getDay() + 4];
     const date = (d.getDate() + 4);
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -121,7 +117,6 @@ const TodayPlus5 = () => {
     const day = weekdays[d.getDay() + 5];
     const date = (d.getDate() + 5);
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -141,7 +136,6 @@ const TodayPlus6 = () => {
     const day = weekdays[d.getDay()+6];
     const date = (d.getDate() + 6);
     const month = months[d.getMonth()];
-    const year = d.getFullYear();
     return (
         <>
             <div className="Date">
@@ -163,10 +157,9 @@ return (
         </div>
         <div className='dropdown' key="priority-dropdown">{PriDropDown()}</div>
         <div className='flex_container' key="container">
-            <Draggable nodeRef={nodeRef} key="draggable">
-            <div ref={nodeRef} draggable="true" className='weekflex'>
-                <h1 className='week_label'>Current Week</h1>
-                <div className="week_day">{Today()}</div>
+            
+            <div ref={nodeRef} className='weekflex'>
+                <div className="week_day">{Today()}</div>                
                 <div className="week_day">{TodayPlus1()}</div>
                 <div className="week_day">{TodayPlus2()}</div>
                 <div className="week_day">{TodayPlus3()}</div>
@@ -174,7 +167,7 @@ return (
                 <div className="week_day">{TodayPlus5()}</div>
                 <div className="week_day">{TodayPlus6()}</div>
             </div>
-            </Draggable>
+           
             <Draggable nodeRef={nodeRef}>
             <div ref={nodeRef} draggable="true" className= 'todoflex'>
                 <div className='todoCard'>{ToDoList()}</div>
@@ -188,5 +181,4 @@ return (
         </div>
     </>
 )
-
 }

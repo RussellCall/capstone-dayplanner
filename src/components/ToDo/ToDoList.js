@@ -53,7 +53,7 @@ const [toDoItems, updateTasks] = useState([])
                                     <div id="tdheader" key={`toDoItem--${toDoItem.id}`}>                                
                                     {toDoItem.userId === parseInt(localStorage.getItem("planner_user")) ?                       
                                     <><div className="todo" style={{ textDecoration: toDoItem.complete ? 'line-through' : 'none', }}>
-                                        {toDoItem.priority ? "❗" : ""} {toDoItem.task + "--" + toDoItem.category.description}
+                                        {toDoItem.priority ? "🔥" : ""} {toDoItem.task + "--" + toDoItem.category.description}
                                     </div>
                                         <Menu>
                                         <MenuButton className='actions'>Actions <span aria-hidden>▾</span></MenuButton>
