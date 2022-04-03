@@ -22,7 +22,7 @@ export const PriDropDown = () => {
         return <div href="#" className="drop-down" key="priority-dropdown">
                 <p className="priorityTitle">Top Priorities</p>
                 
-                <select>
+                <select className="dd-pributton">
                 {
                     priorityItems.map((obj) => {
                         return<>

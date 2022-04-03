@@ -1,9 +1,22 @@
+.dd-display {
+  color: white;
+  font: 20px Inconsolata, monospace;
+  background-color: gray;
+}
+
+select.dd-pributton {
+  color: white;
+  font: 20px Inconsolata, monospace;
+  background-color: gray;
+}
+
 .drop-down {
   color: whitesmoke;
   background-color: black;
 	font-weight: bold;
-  width: 250px;
+  width: 350px;
   margin: auto;
+  padding-bottom: 10px;
   text-align: center;
   border: 8px solid rgba(255, 6, 151, 0.605);  
   border-radius: 20px;
@@ -92,5 +105,6 @@
 
 
 .priorityTitle {
-  font-size: 20px;
+  color: white;
+  font: 20px Inconsolata, monospace;
 }

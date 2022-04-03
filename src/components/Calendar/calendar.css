@@ -114,8 +114,16 @@
 
 
 .weekflex {
-  margin-left: 30%;
-  border: 2px solid;
+  margin-left: 20%;
+  margin-top: 7%;
+  border-width: 3px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      rgb(255, 0, 132), 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
   padding: 10px; 
   width: 300px;
   resize: both;
@@ -126,9 +134,11 @@
 .todoflex {
   display: flex;
   justify-items: right;
-  margin: 5%;
+  margin-left: 15%;
+  margin-top: 10%;
 }
 .todoCard {
+    margin-top: 7%;
     padding: 10px;
     width: 600px;
     height: 300px;
