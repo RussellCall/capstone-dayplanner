@@ -1,0 +1,212 @@
+/*
+// Colours for header area
+$blue: #3f6b9d;
+$orange: #e08f24;
+$white: rgb(240, 240, 240);
+
+// Gradient mixin for Rise button
+@mixin riseButtonGradient(){
+background: rgb(96,134,193);
+background: -moz-linear-gradient(45deg,  rgba(96,134,193,1) 0%, rgba(239,224,151,1) 70%, rgba(214,100,102,1) 100%);
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(96,134,193,1)), color-stop(70%,rgba(239,224,151,1)), color-stop(100%,rgba(214,100,102,1)));
+background: -webkit-linear-gradient(45deg,  rgba(96,134,193,1) 0%,rgba(239,224,151,1) 70%,rgba(214,100,102,1) 100%);
+background: -o-linear-gradient(45deg,  rgba(96,134,193,1) 0%,rgba(239,224,151,1) 70%,rgba(214,100,102,1) 100%);
+background: -ms-linear-gradient(45deg,  rgba(96,134,193,1) 0%,rgba(239,224,151,1) 70%,rgba(214,100,102,1) 100%);
+background: linear-gradient(45deg,  rgba(96,134,193,1) 0%,rgba(239,224,151,1) 70%,rgba(214,100,102,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6086c1', endColorstr='#d66466',GradientType=1 );
+}
+
+// Gradient mixin for Spin button
+@mixin spinButtonGradient(){
+  background: rgb(224,142,38);
+  background: -moz-linear-gradient(45deg,  rgba(224,142,38,1) 0%, rgba(152,38,193,1) 0%, rgba(26,26,26,1) 44%, rgba(26,26,26,1) 56%, rgba(92,188,90,1) 99%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(224,142,38,1)), color-stop(0%,rgba(152,38,193,1)), color-stop(44%,rgba(26,26,26,1)), color-stop(56%,rgba(26,26,26,1)), color-stop(99%,rgba(92,188,90,1)));
+  background: -webkit-linear-gradient(45deg,  rgba(224,142,38,1) 0%,rgba(152,38,193,1) 0%,rgba(26,26,26,1) 44%,rgba(26,26,26,1) 56%,rgba(92,188,90,1) 99%);
+  background: -o-linear-gradient(45deg,  rgba(224,142,38,1) 0%,rgba(152,38,193,1) 0%,rgba(26,26,26,1) 44%,rgba(26,26,26,1) 56%,rgba(92,188,90,1) 99%);
+  background: -ms-linear-gradient(45deg,  rgba(224,142,38,1) 0%,rgba(152,38,193,1) 0%,rgba(26,26,26,1) 44%,rgba(26,26,26,1) 56%,rgba(92,188,90,1) 99%);
+  background: linear-gradient(45deg,  rgba(224,142,38,1) 0%,rgba(152,38,193,1) 0%,rgba(26,26,26,1) 44%,rgba(26,26,26,1) 56%,rgba(92,188,90,1) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e08e26', endColorstr='#5cbc5a',GradientType=1 );
+}
+
+// Gradient mixin for Sweep button
+@mixin sweepButtonGradient(){
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(90deg,  rgba(0,0,0,1) 0%, rgba(255,38,38,1) 94%, rgba(0,0,0,1) 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(0,0,0,1)), color-stop(94%,rgba(255,38,38,1)), color-stop(100%,rgba(0,0,0,1)));
+  background: -webkit-linear-gradient(90deg,  rgba(0,0,0,1) 0%,rgba(255,38,38,1) 94%,rgba(0,0,0,1) 100%);
+  background: -o-linear-gradient(90deg,  rgba(0,0,0,1) 0%,rgba(255,38,38,1) 94%,rgba(0,0,0,1) 100%);
+  background: -ms-linear-gradient(90deg,  rgba(0,0,0,1) 0%,rgba(255,38,38,1) 94%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(90deg,  rgba(0,0,0,1) 0%,rgba(255,38,38,1) 94%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
+}
+
+// Transform mixin
+@mixin transform($property){	
+	-webkit-transform: $property;
+  -moz-transform: $property;
+  transform: $property; 
+}
+
+// Transition mixin
+@mixin single-transition($property:all, $speed:150ms, $ease:ease, $delay: 0s){	
+	-webkit-transition: $property $speed $ease $delay;	
+  transition: $property $speed $ease $delay;
+}
+
+body{  
+  background: #1a1a1a;
+  font-family: sans-serif;
+  text-align: center;
+  color: $white;
+}
+
+a{
+  text-decoration: none;
+  &.link{
+      color: $blue;
+    @include single-transition();
+    &:hover{
+      color: $orange;
+    }
+  }
+}
+
+header{
+  margin: 60px 0 40px;
+}
+
+// The UL containing the buttons
+.buttonList{  
+  width: 100%;
+  float: left;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  list-style-type: none;  
+  li{
+    width: 33.3333%;
+    float: left;
+    padding: 1%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+// Common button styles
+.button{
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  margin: 0 auto;
+	margin-bottom: 0;
+  overflow: hidden;
+  position: relative;  
+  -webkit-transform: translatez(0);
+	transform: translatez(0);
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+}
+
+// Rise button styles
+.riseButton{
+  padding: 26px;
+	border: 1px solid rgba(229,134,45,1);  
+  color: #1a1a1a;
+  font-weight: bold;
+  // Transition for border
+	@include single-transition(all, 0.5s, ease-in-out, 0s);
+	.gradient{
+		display: block;
+		position: absolute;
+    top: 0;
+		right: 0;
+    width: 100%;
+    height: 800%;		
+		bottom: auto;
+		margin: auto;
+		z-index: -1;    
+		@include riseButtonGradient();
+    @include single-transition(all, 0.5s, ease-in-out, 0s);
+    @include transform(translateY(0%));
+	}
+	&:hover, &:focus{
+		border: 1px solid rgba(114,180,211,1);
+		.gradient{
+      @include transform(translateY(-85%));
+		}
+	}
+}
+
+// Spin button styles
+.spinButton{
+  padding: 26px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+  color: $white;
+  // Transition for border
+	@include single-transition(all, 500ms, ease, 0s);
+	.gradient{
+		display: block;
+		position: absolute;
+		top: 0;
+		left: -25px;
+		right: 0;
+		bottom: auto;
+		margin: auto;
+		z-index: -1;
+		@include spinButtonGradient();
+    // Transition for gradient rotation
+		@include single-transition(all, 500ms, ease, 0s);
+		@include transform(rotate(-70deg));
+	}
+	&:hover, &:focus{
+		border: 1px solid $white;
+    color: $white;
+		.gradient{
+			@include transform(rotate(35deg));
+		}
+	}
+}
+
+// Sweep button styles
+.sweepButton{
+  border-radius: 50px;
+  width: 250px;
+  align-self: center;
+  padding: 26px;
+	border: 2px solid rgba(255,38,38,0.2);  
+  color: $white;
+  background: #000000;
+  // Transition out for border
+	@include single-transition(all, 0.2s, ease-out, 0s);
+	.gradient{
+		display: block;
+		position: absolute;
+    top: 0;
+		right: 0;
+    width: 300%;
+    height: 100%;
+		bottom: auto;
+		margin: auto;
+		z-index: -1;    
+		@include sweepButtonGradient();
+    // Transition out for gradient
+    @include single-transition(all, 0s, ease-out, 0s);
+    @include transform(translateX(-35%));
+	}
+	&:hover, &:focus{
+		border: 2px solid rgba(255,38,38,0.8);  
+    color: $white;
+    // Transition in for border
+    @include single-transition(all, 0.3s, ease-out, 0.1s);
+		.gradient{
+			@include transform(translateX(100%));
+      // Transition in for gradient
+      @include single-transition(all, 0.8s, ease-out, 0s);
+		}
+	}
+}
+*/

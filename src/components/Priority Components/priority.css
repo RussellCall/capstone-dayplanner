@@ -1,0 +1,109 @@
+.dd-display {
+  color: white;
+  font: 20px Inconsolata, monospace;
+  background-color: gray;
+}
+
+select.dd-pributton {
+  color: white;
+  font: 20px Inconsolata, monospace;
+  background-color: gray;
+}
+
+.drop-down {
+  color: whitesmoke;
+  background-color: black;
+	font-weight: bold;
+  width: 350px;
+  margin: auto;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 8px solid rgba(255, 6, 151, 0.605);  
+  border-radius: 20px;
+  align-self: center;
+  
+}
+@keyframes blinkingBackground {
+  0%		{ background-color: #09abdd;}
+  25%		{ background-color: #029afffa;}
+  50%		{ background-color: #1056c0;}
+  75%		{ background-color: #254878;}
+  100%	{ background-color: #04a1d5;}
+  
+}
+.css-selector {
+  background: linear-gradient(270deg, #14d4a2, #d96415, #d91559);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 23s ease infinite;
+  -moz-animation: AnimationName 23s ease infinite;
+  animation: AnimationName 23s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.pri-button {
+  background-image: linear-gradient(#42A1EC, #0070C9);
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.pri-button:disabled {
+  cursor: default;
+  opacity: .3;
+}
+
+.pri-button:hover {
+  background-image: linear-gradient(#51A9EE, #147BCD);
+  border-color: #1482D0;
+  text-decoration: none;
+}
+
+.pri-button:active {
+  background-image: linear-gradient(#3D94D9, #0067B9);
+  border-color: #006DBC;
+  outline: none;
+}
+
+.pri-button:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+
+.priorityTitle {
+  color: white;
+  font: 20px Inconsolata, monospace;
+}
