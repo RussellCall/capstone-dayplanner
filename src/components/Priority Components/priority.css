@@ -21,7 +21,6 @@ select.dd-pributton {
   border: 8px solid rgba(255, 6, 151, 0.605);  
   border-radius: 20px;
   align-self: center;
-  /*animation: blinkingBackground 10s ease infinite;*/
   
 }
 @keyframes blinkingBackground {
