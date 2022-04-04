@@ -1,7 +1,6 @@
 
 
 .clock {
-  /*font-style: italic;*/
   font-size: 40px;
   display: flex;
   justify-content: center;
@@ -13,14 +12,6 @@
   margin-left: 25%;
   margin-right: 25%;
 }
-
-/*
-div.date {
-  text-align: center;
-}
-h5 {
-  align-items: center;
-}*/
 
 .date-day {
   display: flex;

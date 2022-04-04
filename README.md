@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Utilize the associated json database with this application: <https://github.com/RussellCall/nss-dayplanner-json-DB.git>
 
-## Available Scripts
+## DAY TRACKER Weekly Planner Application
 
-In the project directory, you can run:
+This application functions as an 7 day event tacker, priority notes display, and to-do list.
+Allows users access to a one-stop user-interface for managing ones daily activities.
 
-### `npm start`
+### Utility
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+DAY TRACKER creates a more simplifies yet dynamic and functionally diverse day planning tool, with easy user interface.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 7 Day Calender
 
-### `npm test`
+The calender table displays the current day and date at the top of the row, with the following 6 days displayed below it.
+The each day block in the 7 day calender has a 'Notes' button.  Clicking this button opens a popup window allowing users to enter a note for the day, to be displayed in the day block.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Weekly Calender Demo](/demo/readMeWeekdays.gif)
 
-### `npm run build`
+### To-Do list
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+the To-Do List window generates a basic text display, managed by both a NavBar at the top of the webpage, as well as an 'Actions' button located to the left of each user created to-do line.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![To-Do List Demo](/demo/readMeToDoList.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Priority Display
 
-### `npm run eject`
+A priority list display operates below the constant date/time display at the top of the page.  It is managed via a button in the top NavBar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![To-Do List Demo](/demo/readMePriorityList.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Resources
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+React, Javascript, CSS, Reach UI (menu buttons), react-draggable.

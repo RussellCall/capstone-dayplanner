@@ -1,8 +1,6 @@
 
 import React, { useState, useEffect } from "react"
 import './priority.css'
-//import './priorityscss.scss'
-
 
 
 export const PriDropDown = () => {

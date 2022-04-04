@@ -1,8 +1,6 @@
 import React from 'react';
 import './dayTime.css'
-//import './index.css';
-//import React, { useEffect, useState } from "react";
-//import { Link } from "react-router-dom"
+
 
 export const DayList = () => {
     const d = new Date();
