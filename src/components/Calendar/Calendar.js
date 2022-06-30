@@ -174,11 +174,6 @@ return (
             </div>
             </Draggable>
         </div>
-        <div>
-        <Route path="/priorityItems/create">
-                <PriorityForm />
-        </Route>
-        </div>
     </>
 )
 }

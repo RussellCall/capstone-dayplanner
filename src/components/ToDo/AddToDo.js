@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
-import { togglePri } from "../ApiManager";
 import Popup from "../PopUp";
 import './todo.css'
-
-
-//import { CatDropDown } from "./ToDoCatDrpDwn";
-
 
 
 export const NewToDo = () => {
